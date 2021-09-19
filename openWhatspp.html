@@ -107,7 +107,8 @@
 
                 if (!!contactNum)
                 {
-                    window.location.href = 'https://wa.me/'+contactNum.value+'?text='+encodeURIComponent('Hi, I am Tausif From IDBI Bank Parbhani.');
+                    //window.location.href = 'https://wa.me/'+contactNum.value+'?text='+encodeURIComponent('Hi, I am Tausif From IDBI Bank Parbhani.');
+                    window.location.href = 'https://api.whatsapp.com/send/?phone='+contactNum.value+'&text='+encodeURIComponent('Hi, I am Tausif From IDBI Bank Parbhani.');
                 }
             }
         </script>
