@@ -73,7 +73,6 @@
             <input id="contactNum" type="text" placeholder="96xxxxxxxx" inputmode="tel" oninput="filterNumber(this)">
             <div id="marginHolder"></div>
             <button id="startChatBtn" type="button" disabled="disabled" onclick="initiateWhatsappChat()">Start WhatsApp Chat!</button>
-            <a href="https://api.whatsapp.com/send/?phone=9604466007">Send</a>
         </section>
         <script>
             var validInputInContactNum = false;
@@ -109,7 +108,7 @@
 
                 if (!!contactNum)
                 {
-                    window.location = 'https://api.whatsapp.com/send/?phone='+contactNum.value+'&text='+encodeURIComponent('Hi, I am Tausif from IDBI Bank Parbhani.');
+                    window.location = 'https://api.whatsapp.com/send?phone='+contactNum.value+'&text='+encodeURIComponent('Hi, I am Tausif from *IDBI Bank Parbhani*.');
                 }
             }
 
