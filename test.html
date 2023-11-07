@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minimal HTML Page with Touch Events</title>
+  <style>
+    /* Add button-like styling */
+    #myButton {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Add styles for focus state */
+    #myButton:focus {
+      outline: 2px solid #ff7e00;
+    }
+  </style>
+</head>
+<body>
+  <div role="button" id="myButton" tabindex="0">Click Me</div>
+
+  <script>
+    var buttonDiv = document.getElementById("myButton");
+
+    buttonDiv.addEventListener("touchstart", function(event) {
+      console.log("Touch Start Event");
+      // You can add any touchstart event handling code here
+    });
+
+    buttonDiv.addEventListener("touchend", function(event) {
+      console.log("Touch End Event");
+      // You can add any touchend event handling code here
+    });
+
+    buttonDiv.addEventListener("touchmove", function(event) {
+      console.log("Touch Move Event");
+      // You can add any touchmove event handling code here
+    });
+
+    buttonDiv.addEventListener("touchcancel", function(event) {
+      console.log("Touch Cancel Event");
+      // You can add any touchcancel event handling code here
+    });
+
+    // Add keyboard focus handling
+    buttonDiv.addEventListener("focus", function(event) {
+      buttonDiv.classList.add("focused");
+    });
+
+    buttonDiv.addEventListener("blur", function(event) {
+      buttonDiv.classList.remove("focused");
+    });
+  </script>
+</body>
+</html>
