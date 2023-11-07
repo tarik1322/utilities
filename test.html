@@ -17,32 +17,39 @@
     #myButton:focus {
       outline: 2px solid #ff7e00;
     }
+
+    body {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <div role="button" id="myButton" tabindex="0">Click Me</div>
+  <div role="button" id="divButton" tabindex="0">Div Button</div>
+  <br>
+  <br>
+  <button id="nativeButton">Native Button</button>
 
   <script>
-    var buttonDiv = document.getElementById("myButton");
+    var buttonDiv = document.getElementById("divButton");
 
     buttonDiv.addEventListener("touchstart", function(event) {
-      console.log("Touch Start Event");
-      alert('Touch Start Event');
+      console.log("Div Button: Touch Start Event");
+      alert('Div Button: Touch Start Event');
       // You can add any touchstart event handling code here
     });
 
     buttonDiv.addEventListener("touchend", function(event) {
-      console.log("Touch End Event");
+      console.log("Div Button: Touch End Event");
       // You can add any touchend event handling code here
     });
 
     buttonDiv.addEventListener("touchmove", function(event) {
-      console.log("Touch Move Event");
+      console.log("Div Button: Touch Move Event");
       // You can add any touchmove event handling code here
     });
 
     buttonDiv.addEventListener("touchcancel", function(event) {
-      console.log("Touch Cancel Event");
+      console.log("Div Button: Touch Cancel Event");
       // You can add any touchcancel event handling code here
     });
 
@@ -53,6 +60,38 @@
 
     buttonDiv.addEventListener("blur", function(event) {
       buttonDiv.classList.remove("focused");
+    });
+
+    var nativeButton = document.getElementById("nativeButton");
+
+    nativeButton.addEventListener("touchstart", function(event) {
+      console.log("Native Button: Touch Start Event");
+      alert('Native Button: Touch Start Event');
+      // You can add any touchstart event handling code here
+    });
+
+    nativeButton.addEventListener("touchend", function(event) {
+      console.log("Native Button: Touch End Event");
+      // You can add any touchend event handling code here
+    });
+
+    nativeButton.addEventListener("touchmove", function(event) {
+      console.log("Native Button: Touch Move Event");
+      // You can add any touchmove event handling code here
+    });
+
+    nativeButton.addEventListener("touchcancel", function(event) {
+      console.log("Native Button: Touch Cancel Event");
+      // You can add any touchcancel event handling code here
+    });
+
+    // Add keyboard focus handling
+    nativeButton.addEventListener("focus", function(event) {
+      nativeButton.classList.add("focused");
+    });
+
+    buttonDiv.addEventListener("blur", function(event) {
+      nativeButton.classList.remove("focused");
     });
   </script>
 </body>
